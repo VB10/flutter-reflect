@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:refsample/core/service/reflaction.dart';
 
+import '../../../core/utility/url_extensions.dart';
 import '../model/hello.dart';
 
 class HelloView extends StatefulWidget {
@@ -48,8 +49,9 @@ class _HelloViewState extends State<HelloView> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
           getSample2<Hello>();
+          await "+1 555 010 999".callPhone();
         },
       ),
       body: Center(
